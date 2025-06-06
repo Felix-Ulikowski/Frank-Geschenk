@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padel Gutschein</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .voucher {
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            width: 600px;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid #667eea;
+        }
+
+        .voucher::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(102,126,234,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .voucher-content {
+            position: relative;
+            z-index: 2;
+            padding: 40px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            font-weight: 300;
+        }
+
+        .main-content {
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .service {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .value {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #667eea;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .description {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 2px dashed #667eea;
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        .validity {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .code {
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            color: #667eea;
+            font-weight: bold;
+            background: rgba(102,126,234,0.1);
+            padding: 8px 15px;
+            border-radius: 8px;
+        }
+
+        .padel-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .decoration {
+            position: absolute;
+            left: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 100px;
+            background: repeating-linear-gradient(
+                0deg,
+                #667eea,
+                #667eea 10px,
+                transparent 10px,
+                transparent 20px
+            );
+            border-radius: 0 10px 10px 0;
+        }
+
+        .decoration-right {
+            left: auto;
+            right: -10px;
+            border-radius: 10px 0 0 10px;
+        }
+
+        @media (max-width: 650px) {
+            .voucher {
+                width: 90%;
+                height: auto;
+                min-height: 400px;
+            }
+            
+            .voucher-content {
+                padding: 30px 20px;
+            }
+            
+            .title {
+                font-size: 2rem;
+            }
+            
+            .value {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="voucher">
+        <div class="decoration"></div>
+        <div class="decoration decoration-right"></div>
+        <div class="padel-icon">🎾</div>
+        
+        <div class="voucher-content">
+            <div class="header">
+                <h1 class="title">GUTSCHEIN</h1>
+                <p class="subtitle">Padel Tennis</p>
+            </div>
+            
+            <div class="main-content">
+                <div class="service">1 Stunde Einzel-Padel<br><span style="font-size: 1.2rem; color: #764ba2;">+ ein kühles Sportgetränk</span></div>
+                <div class="value">40€</div>
+                <div class="description">
+                    Dieser Gutschein berechtigt zu einer Stunde<br>
+                    Einzel-Padel<br>
+                    <strong>inklusive erfrischendem Sportgetränk</strong>
+                </div>
+            </div>
+            
+            <div class="footer">
+                <div class="validity">
+                    Gültig bis: 12 Monate ab Ausstellung<br>
+                    Nicht mit anderen Aktionen kombinierbar
+                </div>
+                <div class="code">
+                    Code: PADEL2025
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animierte Effekte beim Laden
+        window.addEventListener('load', function() {
+            const voucher = document.querySelector('.voucher');
+            voucher.style.transform = 'scale(0.8)';
+            voucher.style.opacity = '0';
+            
+            setTimeout(() => {
+                voucher.style.transition = 'all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                voucher.style.transform = 'scale(1)';
+                voucher.style.opacity = '1';
+            }, 100);
+        });
+
+        // Hover-Effekt
+        document.querySelector('.voucher').addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.02)';
+            this.style.boxShadow = '0 25px 50px rgba(0,0,0,0.15)';
+        });
+
+        document.querySelector('.voucher').addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+            this.style.boxShadow = '0 20px 40px rgba(0,0,0,0.1)';
+        });
+    </script>
+</body>
+</html>
